@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import Title from './components/Title';
+import Header from './components/Header';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div>
-      <Title></Title>
-    </div>
+    <> {/*React.Fragment short form*/}
+      <Header />
+      {/* <Header></Header> */}
+      <Home />
+    </>
   );
 }
 
