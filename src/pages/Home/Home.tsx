@@ -106,19 +106,25 @@ function Home() {
     return ( 
         <>
             <Title content="Order Delivery or Takeaway"/>
-            <div className="container text-center mt-2">
-                <button
-                    onClick={() => handleDisplayClick('row-cols-3')} 
-                    className="btn btn-sucess mx-1">
-                    <i className="bi-grid-3x3-gap"></i>
-                </button>
-                <button
-                    onClick={() => handleDisplayClick('row-cols-1 list')} 
-                    className="btn btn-sucess mx-1">
-                    <i className="bi-list-task"></i>
-                </button>
-                <div>
-                    <label>Category</label>
+            <div className="container text-center row row-cols-4 mt-4">
+                <div className="col">
+                    <button
+                        onClick={() => handleDisplayClick('row-cols-3')} 
+                        className="btn btn-sucess mx-1">
+                        <i className="bi-grid-3x3-gap"></i>
+                    </button>
+                </div>
+                <div className="col">
+                    <button
+                        onClick={() => handleDisplayClick('row-cols-1 list')} 
+                        className="btn btn-sucess mx-1">
+                        <i className="bi-list-task"></i>
+                    </button>
+                </div>
+                <div className="col">
+                    <label><strong>Category:</strong></label>
+                </div>
+                <div className="col">
                     <select
                         value={selectedCategory}
                         onChange={handleCategoryChange} 
@@ -132,7 +138,7 @@ function Home() {
                                 </option>
                             )                           
                         }                                        
-                    </select>
+                    </select>                    
                 </div>
             </div>
             <div className="container text-center mt-2">            
