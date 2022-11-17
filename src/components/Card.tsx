@@ -6,6 +6,7 @@ interface Props {
     category: string;
     link: string;
     rating: number;
+    handleCategoryClick: Function;
 }
 
 function Card({
@@ -15,7 +16,8 @@ function Card({
     image_url, 
     category, 
     link,
-    rating}: Props) {
+    rating,
+    handleCategoryClick}: Props) {
 
     function handleClick(data:string) {
         alert(`${data} Selected`);
@@ -25,7 +27,7 @@ function Card({
         <div className="col">
             <div className="card mt-4">
                 <img src={image_url} className="card-img-top rounded" alt={name} />
-                <span onClick={(e) => handleClick(category)} className="badge text-center bg-info text-light">{category}</span>
+                <span onClick={(e) => handleCategoryClick(category)} className="badge text-center bg-info text-light">{category}</span>
                 <div className="card-body">
                     <h5 className="card-title text-start">
                         <a href={link}><i className="bi-link"></i>{name}</a>
