@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
+import MenuBar from "../../components/MenuBar";
 import Title from "../../components/Title";
 import { data } from "./data";
 import './Home.css';
 import { CardType, Categories } from "./types";
 
 function Home() {
-
-    const categories = Object.values(Categories);
-    // const categories = ['All','Vegeterian','Asian','Chicken'];
-
-    // States
+    // Application States
     const [display, setDisplay] = useState('row-cols-3');
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [filtered,setFiltered] = useState([...data]);
@@ -61,51 +58,17 @@ function Home() {
     return ( 
         <>
             <Title content="Order Delivery or Takeaway"/>
-            <div className="container text-center row row-cols-6 mt-4">
-                <div className="col">
-                    <button
-                        onClick={() => handleDisplayClick('row-cols-3')} 
-                        className="btn btn-sucess mx-1">
-                        <i className="bi-grid-3x3-gap"></i>
-                    </button>
-                </div>
-                <div className="col">
-                    <button
-                        onClick={() => handleDisplayClick('row-cols-1 list')} 
-                        className="btn btn-sucess mx-1">
-                        <i className="bi-list-task"></i>
-                    </button>
-                </div>
-                <div className="col">
-                    <label><strong>Category:</strong></label>
-                </div>
-                <div className="col">
-                    <select
-                        value={selectedCategory}
-                        onChange={handleCategoryChange} 
-                        className="form-select">
-                        {
-                            categories.map((category) => 
-                                <option
-                                    key={category}
-                                    value={category}
-                                    >{category}
-                                </option>
-                            )                           
-                        }                                        
-                    </select>                    
-                </div>
-                <div className="col">
-                    <input
-                        className="form-control ms-3"
-                        placeholder="Search"
-                        value={search}
-                        onChange={(e) => handleSearch(e)}
-                    ></input>
-                </div>                
-            </div>
+            <MenuBar
+                updateDisplay={handleDisplayClick}
+                handleCategoryChange={handleCategoryChange}
+                handleSearch={handleSearch}
+                selectedCategory={selectedCategory} 
+                search={search}
+            />
+            {/* List of Dashes */}
             <div className="container text-center mt-2">  
             {
+                // Condition rendering
                 // Example x.length === 0 ? 'Yes' : 'No'
                 filtered.length === 0 ? (
                     <p className="mt-4"><strong>No Dishesh Found</strong></p>
