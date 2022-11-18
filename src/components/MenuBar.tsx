@@ -17,25 +17,19 @@ function MenuBar({updateDisplay,
                 selectedCategory,
                 search}: Props) {
     return ( 
-        <div className="container text-center row row-cols-6 mt-4">
-            <div className="col">
+        <div className="d-flex p-4">
+            <div className="d-flex align-items-center mx-auto">
                 <button
                     onClick={() => updateDisplay('row-cols-3')} 
                     className="btn btn-sucess mx-1">
                     <i className="bi-grid-3x3-gap"></i>
-                </button>
-            </div>
-            <div className="col">
+                </button>            
                 <button
                     onClick={() => updateDisplay('row-cols-1 list')} 
                     className="btn btn-sucess mx-1">
                     <i className="bi-list-task"></i>
-                </button>
-            </div>
-            <div className="col">
-                <label><strong>Category:</strong></label>
-            </div>
-            <div className="col">
+                </button>     
+                <label className="px-2"><strong>Category:</strong></label>
                 <select
                     value={selectedCategory}
                     onChange={handleCategoryChange} 
@@ -49,16 +43,14 @@ function MenuBar({updateDisplay,
                             </option>
                         )                           
                     }                                        
-                </select>                    
-            </div>
-            <div className="col">
+                </select>  
                 <input
                     className="form-control ms-3"
                     placeholder="Search"
                     value={search}
                     onChange={(e) => handleSearch(e)}
                 ></input>
-            </div>                
+            </div>                  
         </div>
     );
 }

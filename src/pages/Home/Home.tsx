@@ -66,7 +66,7 @@ function Home() {
                 search={search}
             />
             {/* List of Dashes */}
-            <div className="container text-center mt-2">  
+            <div className="container text-center mt-2 mx-center">  
             {
                 // Condition rendering
                 // Example x.length === 0 ? 'Yes' : 'No'
