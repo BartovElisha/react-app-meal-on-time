@@ -12,6 +12,16 @@ export const data = [
         rating: 5
     },
     {
+        id: 1,
+        name: "Greek Salad", 
+        price: 30.5,
+        description: "Salad with olives",
+        image_url: "https://cdn.pixabay.com/photo/2017/01/09/20/23/pasta-salad-1967501_1280.jpg",
+        category: Categories.vegeterian,
+        link: "https://www.edimdoma.ru/jivem_doma/posts/23010-sostavlyaem-legkoe-menyu-na-nedelyu",
+        rating: 5
+    },
+    {
         id: 2,
         name: "Pad Thai", 
         price: 45,
